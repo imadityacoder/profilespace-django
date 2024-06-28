@@ -1,0 +1,11 @@
+.theme{
+    color: black;
+    background: linear-gradient(90deg,rgb(206, 255, 226),rgb(156, 255, 197),rgb(119, 255, 175));
+}
+
+.user-img{
+    max-height: 32px;
+    max-width: 32px;
+    border-radius: 100px;
+    margin: 4px 12px;
+}
