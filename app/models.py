@@ -11,26 +11,25 @@ class Gender(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length=254)
-    slug = AutoSlugField(populate_from='username',unique=True,blank=True)
-    author = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
+    pic = models.ImageField(upload_to="images/")
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
+    slug = AutoSlugField(populate_from='user',unique=True,blank=True)
     age = models.PositiveIntegerField()
     gender = models.ForeignKey(Gender,on_delete=models.CASCADE)
-    pic = models.ImageField(upload_to="images/")
-    institution_name = models.CharField(max_length=254)
     degree = models.CharField(max_length=254)
-    field = models.CharField(max_length=254)
+    Study = models.CharField(max_length=254)
     skills = models.CharField(max_length=254)
-    phone = models.CharField(max_length=50)
+    phone = models.CharField(max_length=12)
     email= models.EmailField(max_length=254)
     bio = models.TextField()
     created_at = models.DateField(auto_now_add=True)
 
 
     def __str__(self):
-        return self.username
+        return self.user
     
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
-        return self.name + " - " + str(self.author) + " | " + str(self.email)
+        return self.name + " - " + str(self.user) + " | " + str(self.email)

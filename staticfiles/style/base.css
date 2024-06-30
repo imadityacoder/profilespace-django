@@ -1,6 +1,17 @@
-.theme{
+body{
+    background-color: #ffffff !important;
+}
+
+
+
+
+.main-theme{
     color: black;
     background: linear-gradient(90deg,rgb(206, 255, 226),rgb(156, 255, 197),rgb(119, 255, 175));
+}
+.card-theme{
+    color: white;
+    background:linear-gradient(90deg,rgb(127, 252, 179),rgb(46, 250, 131),rgb(0, 255, 106));
 }
 
 .user-img{
@@ -8,4 +19,15 @@
     max-width: 32px;
     border-radius: 100px;
     margin: 4px 12px;
+}
+
+.bottom-curve { 
+    border-bottom-left-radius: 35% 100px !important;
+    border-bottom-right-radius: 35% 100px !important;
+
+}
+.top-curve { 
+    border-top-left-radius: 35% 100px !important;
+    border-top-right-radius: 35% 100px !important;
+
 }
