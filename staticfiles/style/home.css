@@ -1,0 +1,110 @@
+.hero {
+  background-size: cover;
+  color: rgb(0, 0, 0);
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  font-size: 1.25rem;
+  padding: 15px 30px;
+}
+.process {
+  background: url("/static/img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.process h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.process .overlay {
+  background-color: rgba(0, 0, 0, 0.438);
+}
+
+.features .icon {
+  font-size: 3rem;
+  color: #0084ff;
+  margin-bottom: 5px;
+}
+
+.feature-image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5px;
+  border-radius: calc(100%);
+}
+.about {
+  background: #080808e0;
+  color: white;
+}
+
+.about-section {
+  padding: 100px 0;
+}
+
+.about-section h2 {
+  margin-bottom: 20px;
+}
+
+.process-step img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.process-step {
+  background: linear-gradient(
+    90deg,
+    rgb(206, 255, 226),
+    rgb(156, 255, 197),
+    rgb(119, 255, 175)
+  );
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.process-step div {
+  margin: auto;
+}
+
+.contact-section,
+.footer {
+  background-color: #000000e0;
+  color: white;
+  padding: 50px 20px;
+}
+.testimonials {
+  color: rgb(0, 0, 0);
+  background-color: blanchedalmond;
+  margin-bottom: 0px !important;
+  padding: 100px 30px !important;
+}
+.testimonials p {
+  font-size: 1.1rem;
+  margin-top: 5px !important;
+  font-weight: 400;
+  font-style: italic;
+}
+

@@ -1,25 +1,174 @@
 {% extends "main/base.html" %}
 {% load static %}
-{% block title %}Home{% endblock title %}
+{% block title %}Home - ProfileSpace{% endblock title %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "style/home.css" %}">
 {% endblock head %}
 
+
 {% block body %}
-<div class=" py-4">
-<div class="box p-4 main-theme bottom-curve mt-4">
-    <div class=" text-body-emphasis ">
-      <div class="mx-4 p-4">
-        <h1 class="display-4 fst-italic">Welcome To The profileSpace</h1>
-        <p class="lead my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum excepturi saepe temporibus quam, nostrum modi a molestiae officiis veritatis reiciendis mollitia voluptatum necessitatibus repellendus delectus ex accusantium doloribus assumenda cumque aspernatur. Debitis rem asperiores facere suscipit alias nemo repudiandae voluptatem!</p>
+  <!-- hero section  -->
+  <div class="hero theme-color">
+    <div class="container hero-content">
+      <h1>Create Your Professional Resume with Ease</h1>
+      <p>Join thousands of professionals who have successfully landed their dream jobs.</p>
+      <a href="#" class="btn btn-primary btn-lg">Get Started Now</a>
+    </div>
+  </div>
+
+  <!-- Process Section -->
+
+  <div class="process">
+    <div class="overlay">
+    <div class="container mb-4 p-4">
+      <h2 class="text-center mb-3">How It Works</h2>
+      <div class="row process-step">
+        <div class="col-6">
+          <img src="bg.jpg" class="img-fluid" alt="Step 1: Sign Up">
+        </div>
+        <div class="col-6">
+          <h3>Step 1: Sign Up</h3>
+          <p>Create an account to get started. Sign up with your email and set a secure password.</p>
+        </div>
+      </div>
+
+      <div class="row process-step">
+        <div class="col-6 order-2">
+          <img src="bg.jpg" class="img-fluid" alt="Step 3: Fill in Your Information">
+        </div>
+        <div class="col-6 order-1">
+          <h3>Step 3: Fill in Your Information</h3>
+          <p>Enter your personal information, education, work experience, and any other relevant details.</p>
+        </div>
+      </div>
+      <div class="row process-step">
+        <div class="col-6 ">
+          <img src="bg.jpg" class="img-fluid" alt="Step 4: Customize Your Design">
+        </div>
+        <div class="col-6">
+          <h3>Step 4: Customize Your Design</h3>
+          <p>Customize the template to make it your own. Change colors, fonts, and layout to suit your preferences.</p>
+        </div>
+      </div>
+      <div class="row process-step">
+        <div class="col-6 order-2">
+          <img src="bg.jpg" class="img-fluid" alt="Step 5: Preview and Download">
+        </div>
+        <div class="col-6 order-1">
+          <h3>Step 5: Preview and Download</h3>
+          <p>Preview your resume to ensure it looks perfect. Then download it in your preferred format (PDF, Word,
+            etc.).
+          </p>
+        </div>
       </div>
     </div>
-</div> 
-</div> 
-
-
-
-</div>  
+  </div>
+  </div>
   
+  
+  <!-- Features Section -->
+  <div class="container my-5 features">
+      <h1 class="text-center mb-4">Features</h1>
+      <div class="row text-center">
+          <div class="col-md-4">
+              <img src="bg.jpg" alt="Easy to Use" class="feature-image">
+              <div class="icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Easy to Use</h3>
+                <p>Create a professional resume in just a few clicks.</p>
+                
+            </div>
+            <div class="col-md-4">
+                <img src="bg.jpg" alt="Customizable Templates" class="feature-image">
+                <div class="icon">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <h3>Customizable Templates</h3>
+                <p>Choose from a variety of templates to suit your needs.</p>
+                
+            </div>
+            <div class="col-md-4" id="about">
+                <img src="..." alt="Share Easily" class="feature-image">
+                <div class="icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3>Share Easily</h3>
+                <p>Share your resume with potential employers online.</p>
+                
+            </div>
+        </div>
+    </div>
+    <hr class="w-75 mx-auto">
+    
+  <!-- About Section -->
+
+  <div style="max-width:100%;" class="about">
+    <div class="row g-0">
+      <div class="col-md-6 m-auto">
+        <div class="card-body p-4">
+          <h2 class="card-title px-4 py-2">About Us</h2>
+          <hr class="my-1">
+          <p class="card-text px-4">
+            At ResumeMaker, we are dedicated to helping you create professional resumes that stand out. Our easy-to-use
+            platform provides a wide range of customizable templates and intuitive design tools to help you showcase
+            your skills and experience effectively. Whether you're a recent graduate or an experienced professional,
+            ResumeMaker is here to assist you in landing your dream job.</p>
+
+        </div>
+      </div>
+      <div class="col-md-6 m-auto">
+        <img src="{% static "img/about-img.jpg" %}" class="img-fluid" alt="about us">
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="testimonials">
+    <h2 class="text-center">What Our Users Say</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <blockquote class="blockquote">
+          <p>"ResumeMaker made creating my resume so easy and quick! I landed my dream job thanks to their amazing
+            templates."</p>
+          <footer class="blockquote-footer">John Doe</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote class="blockquote">
+          <p>"I love how customizable the templates are. I could really make my resume stand out."</p>
+          <footer class="blockquote-footer">Jane Smith</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote class="blockquote">
+          <p>"I love how customizable the templates are. I could really make my resume stand out."</p>
+          <footer class="blockquote-footer">tony Stark</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Section -->
+  <div class="contact-section row" id="contact">
+    <div class="container" style="max-width: 720px;">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form>
+        <div class="form-group my-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name">
+        </div>
+        <div class="form-group my-3">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Your Email">
+        </div>
+        <div class="form-group my-3">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+
 {% endblock body %}

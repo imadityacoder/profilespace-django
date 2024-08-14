@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup frontend</title>
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container col-lg-6 col-md-8 col-sm-12  pb-5 my-5">
+        <main class="form-signin w-100 m-auto">
+            <h1 class="h1 mb-5 text-center">ProfileSpace</h1>
+            <form method="POST">
+                <h1 class="h3 mb-3 fw-normal">Please Signup</h1>
+
+                <div class="form-floating m-1">
+                    <input type="text" class="form-control" id="{{form.username.name}}" placeholder="Username"
+                        name="{{form.username.name}}" value="{{form.username.value}}">
+                    <label for="{{form.username.id_for_label}}">Username</label>
+                    <span class="text-danger">{{form.username.errors}}</span>
+                    {% csrf_token %}
+                </div>
+
+                <div class="form-floating m-1">
+                    <input type="email" class="form-control" id="{{form.email.name}}" placeholder="Email address"
+                        name="{{form.email.name}}" value="{{form.email.value}}">
+                    <label for="{{form.email.name}}">Email address</label>
+                    <span class="text-danger">{{form.email.errors}}</span>
+                </div>
+                <div class="form-floating m-1">
+                    <input type="password" class="form-control" id="{{form.password1.name}}" placeholder="Password1"
+                        name="{{form.password1.name}}" value="{{form.password1.value}}">
+                    <label for="{{form.password1.name}}">Password</label>
+                    <span class="text-danger">{{form.password1.errors}}</span>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault"
+                        onclick="myFunction()">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Show Password
+                    </label>
+                </div>
+
+                <button class="btn btn-primary w-100 py-2 my-3" type="submit">Sign in</button>
+            </form>
+        </main>
+        <br>
+        <a href="/login">Already have an account? login now.</a>
+    </div>
+
+    <script>
+        function myFunction() {
+            var p1 = document.getElementById("{{form.password1.name}}");
+            var p2 = document.getElementById("{{form.password2.name}}");
+            if (p1.type === "password") {
+                p1.type = "text";
+                p2.type = "text";
+            } else {
+                p1.type = "password";
+                p2.type = "password";
+            }
+        } 
+    </script>
+    <script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

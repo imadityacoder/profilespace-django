@@ -5,11 +5,6 @@ from app.models import Profile
 def home(request):
     return render(request,'main/home.html')
 
-def about(request):
-    return render(request,'main/about.html')
-
-def contact(request):
-    return render(request,'main/contact.html')
 
 def signup(request):
     return render(request,'auth/signup.html')
@@ -26,7 +21,4 @@ def create(request):
     return render(request,'main/create.html')
 
 def update(request):
-    return render(request,'main/update.html')
-
-def delete(request):
     return render(request,'main/update.html')

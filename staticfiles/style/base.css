@@ -1,33 +1,36 @@
-body{
-    background-color: #ffffff !important;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(233, 233, 233),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(233, 233, 233)
+  );
+}
+
+.theme-color {
+  background: linear-gradient(
+    90deg,
+    rgb(206, 255, 226),
+    rgb(156, 255, 197),
+    rgb(119, 255, 175)
+  );
 }
 
 
-
-
-.main-theme{
-    color: black;
-    background: linear-gradient(90deg,rgb(206, 255, 226),rgb(156, 255, 197),rgb(119, 255, 175));
-}
-.card-theme{
-    color: white;
-    background:linear-gradient(90deg,rgb(127, 252, 179),rgb(46, 250, 131),rgb(0, 255, 106));
-}
-
-.user-img{
-    max-height: 32px;
-    max-width: 32px;
-    border-radius: 100px;
-    margin: 4px 12px;
-}
-
-.bottom-curve { 
-    border-bottom-left-radius: 35% 100px !important;
-    border-bottom-right-radius: 35% 100px !important;
+.auth-btn a{
+  background-color: #0084ff;
+  color: white;
+  border-radius: 6px;
+  margin: 2px;
 
 }
-.top-curve { 
-    border-top-left-radius: 35% 100px !important;
-    border-top-right-radius: 35% 100px !important;
+.auth-btn a:hover{
+  background-color: #0279e9;
+  color: white;
 
 }
