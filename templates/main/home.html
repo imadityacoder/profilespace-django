@@ -9,12 +9,18 @@
 
 {% block body %}
   <!-- hero section  -->
-  <div class="hero theme-color">
+  <div class="hero theme-color p-2">
     <div class="container hero-content">
-      <h1>Create Your Professional Resume with Ease</h1>
+      <h1>Create Your Professional Portfolio with Ease</h1>
       <p>Join thousands of professionals who have successfully landed their dream jobs.</p>
-      <a href="#" class="btn btn-primary btn-lg">Get Started Now</a>
+      {% if user.is_authenticated %}
+      <a href="{% url "create" user.username%}" class="btn btn-primary btn-lg">Get Started Now</a>
+      {% else %}
+      <a href="{% url "signup"%}" class="btn btn-primary btn-lg">Get Started Now</a>
+      {% endif %}
     </div>
+    
+    
   </div>
 
   <!-- Process Section -->
@@ -25,40 +31,39 @@
       <h2 class="text-center mb-3">How It Works</h2>
       <div class="row process-step">
         <div class="col-6">
-          <img src="bg.jpg" class="img-fluid" alt="Step 1: Sign Up">
+          <img src="{% static "img/users.png" %}" style="max-width:200px;" class="img-fluid" alt="Step 1: Sign Up">
         </div>
         <div class="col-6">
-          <h3>Step 1: Sign Up</h3>
-          <p>Create an account to get started. Sign up with your email and set a secure password.</p>
+          <h4>Step 1: Sign Up</h4>
+          <p class="d-none d-md-block">Create an account to get started. Sign up with your email and set a secure password.</p>
         </div>
       </div>
 
       <div class="row process-step">
         <div class="col-6 order-2">
-          <img src="bg.jpg" class="img-fluid" alt="Step 3: Fill in Your Information">
+          <img src="{% static "img/birdpen.png" %}" style="max-width:200px;" class="img-fluid" alt="Step 2: Fill in Your Information">
         </div>
         <div class="col-6 order-1">
-          <h3>Step 3: Fill in Your Information</h3>
-          <p>Enter your personal information, education, work experience, and any other relevant details.</p>
+          <h4>Step 2: Fill in Your Information</h4>
+          <p class="d-none d-md-block">Enter your personal information, education, work experience, and any other relevant details.</p>
         </div>
       </div>
       <div class="row process-step">
         <div class="col-6 ">
-          <img src="bg.jpg" class="img-fluid" alt="Step 4: Customize Your Design">
+          <img src="{% static "img/register.png" %}" style="max-width:200px;" class="img-fluid" alt="Step 3: Customize Your Design">
         </div>
         <div class="col-6">
-          <h3>Step 4: Customize Your Design</h3>
-          <p>Customize the template to make it your own. Change colors, fonts, and layout to suit your preferences.</p>
+          <h4>Step 3: Customize Your Design</h4>
+          <p class="d-none d-md-block">Customize the template to make it your own. Change colors, fonts, and layout to suit your preferences.</p>
         </div>
       </div>
       <div class="row process-step">
         <div class="col-6 order-2">
-          <img src="bg.jpg" class="img-fluid" alt="Step 5: Preview and Download">
+          <img src="{% static "img/upload.png" %}" style="max-width:200px;" class="img-fluid" alt="Step 4: Preview and Download">
         </div>
         <div class="col-6 order-1">
-          <h3>Step 5: Preview and Download</h3>
-          <p>Preview your resume to ensure it looks perfect. Then download it in your preferred format (PDF, Word,
-            etc.).
+          <h4>Step 4: Preview and Share</h4>
+          <p class="d-none d-md-block">Preview your portfolio page to ensure it looks perfect. Then share it in your clients and friends.
           </p>
         </div>
       </div>
@@ -72,16 +77,16 @@
       <h1 class="text-center mb-4">Features</h1>
       <div class="row text-center">
           <div class="col-md-4">
-              <img src="bg.jpg" alt="Easy to Use" class="feature-image">
+              <img src="{% static "img/mouse.png" %}" alt="Easy to Use" class="feature-image">
               <div class="icon">
                   <i class="fas fa-file-alt"></i>
                 </div>
                 <h3>Easy to Use</h3>
-                <p>Create a professional resume in just a few clicks.</p>
+                <p>Create a professional portfolio page in just a few clicks.</p>
                 
             </div>
             <div class="col-md-4">
-                <img src="bg.jpg" alt="Customizable Templates" class="feature-image">
+                <img src="{% static "img/present.png" %}" alt="Customizable Templates" class="feature-image">
                 <div class="icon">
                     <i class="fas fa-user-edit"></i>
                 </div>
@@ -89,18 +94,18 @@
                 <p>Choose from a variety of templates to suit your needs.</p>
                 
             </div>
-            <div class="col-md-4" id="about">
-                <img src="..." alt="Share Easily" class="feature-image">
+            <div class="col-md-4" >
+                <img src="{% static "img/push.png" %}" alt="Share Easily" class="feature-image">
                 <div class="icon">
                     <i class="fas fa-share-alt"></i>
                 </div>
                 <h3>Share Easily</h3>
-                <p>Share your resume with potential employers online.</p>
+                <p>Share your portfolio page with potential employers online.</p>
                 
             </div>
         </div>
     </div>
-    <hr class="w-75 mx-auto">
+    <hr class="w-75 mx-auto" id="about">
     
   <!-- About Section -->
 
@@ -111,10 +116,10 @@
           <h2 class="card-title px-4 py-2">About Us</h2>
           <hr class="my-1">
           <p class="card-text px-4">
-            At ResumeMaker, we are dedicated to helping you create professional resumes that stand out. Our easy-to-use
+            At profileSpace, we are dedicated to helping you create professional portfolio pages that stand out. Our easy-to-use
             platform provides a wide range of customizable templates and intuitive design tools to help you showcase
             your skills and experience effectively. Whether you're a recent graduate or an experienced professional,
-            ResumeMaker is here to assist you in landing your dream job.</p>
+            profileSpace is here to assist you in landing your dream job.</p>
 
         </div>
       </div>
@@ -126,48 +131,50 @@
 
   <!-- Testimonials Section -->
   <div class="testimonials">
-    <h2 class="text-center">What Our Users Say</h2>
+    <h2 class="text-center mb-3">What Our Users Say</h2>
     <div class="row">
       <div class="col-md-4">
         <blockquote class="blockquote">
-          <p>"ResumeMaker made creating my resume so easy and quick! I landed my dream job thanks to their amazing
+          <p>"profileSpace made creating my portfolio page so easy and quick! I landed my dream job thanks to their amazing
             templates."</p>
           <footer class="blockquote-footer">John Doe</footer>
         </blockquote>
       </div>
       <div class="col-md-4">
         <blockquote class="blockquote">
-          <p>"I love how customizable the templates are. I could really make my resume stand out."</p>
+          <p>"I love how customizable the templates are. I could really make my portfolio page stand out."</p>
           <footer class="blockquote-footer">Jane Smith</footer>
         </blockquote>
       </div>
       <div class="col-md-4">
         <blockquote class="blockquote">
-          <p>"I love how customizable the templates are. I could really make my resume stand out."</p>
+          <p>"I love how customizable the templates are. I could really make my portfolio page stand out."</p>
           <footer class="blockquote-footer">tony Stark</footer>
         </blockquote>
       </div>
     </div>
   </div>
   <!-- Contact Section -->
-  <div class="contact-section row" id="contact">
+  <div class="contact-section" id="contact">
     <div class="container" style="max-width: 720px;">
       <h2 class="text-center mb-4">Contact Us</h2>
-      <form>
+      <form method="post">
         <div class="form-group my-3">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Your Name">
+          {% csrf_token %}
+          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
         </div>
         <div class="form-group my-3">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="Your Email">
+          <input type="email" class="form-control" id="email" name='email' class="email" placeholder="Your Email">
         </div>
         <div class="form-group my-3">
-          <label for="message">Message</label>
-          <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+          <label for="desc">Message</label>
+          <textarea class="form-control" id="desc" name='desc' rows="4" placeholder="Your Message"></textarea>
         </div>
+        
         <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
+
     </div>
   </div>
 

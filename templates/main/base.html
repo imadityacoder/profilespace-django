@@ -8,54 +8,82 @@
   <title>{% block title %}{% endblock title %}</title>
   <link rel="stylesheet" href="{% static "bootstrap5/css/bootstrap.min.css" %}">
   <link rel="stylesheet" href="{% static "style/base.css" %}">
-
+  <link rel="icon" type="image/x-icon" href="{% static "img/logo.ico" %}">
   {% block head %}{% endblock head %}
 </head>
 
 <body>
   <!-- nav-section  -->
-  <nav class="navbar navbar-expand-lg theme-color sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">ProfileSpace</a>
+  <nav class="navbar navbar-expand-md theme-color sticky-top px-2">
+    <div class="container-fluid p-1">
+      <a class="navbar-brand" href="/"><h3>ProfileSpace</h3></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#about">About</a>
+            <a class="nav-link active" href="/#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#contact">Contact Us</a>
+            <a class="nav-link active" href="/#contact">Contact Us</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="/new">Resume Builder</a>
+            <a class="nav-link active" href="{% url "create" user.username%}">Portfolio Builder</a>
           </li>
-          
-      
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url "signup" %}">Portfolio Builder</a>
+          </li>
+          {% endif %}
         </ul>
         <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item dropstart">
+          <p class="text-light text-center bg-dark rounded-pill px-4 py-2 my-0" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            {{user.username}}
+          </p>
+          <ul class="dropdown-menu mt-2">
+            <li class="dropdown-item auth-btn">
+              <a class="nav-link text-center" href="/logout">Logout</a>
+            </li>
+          </ul>
+
+      </li>
+          {% else %}
           <li class="nav-item auth-btn">
-            <a class="nav-link text-center" href="/signup">Signup</a>
+            <a class="nav-link text-center" href="{% url "signup"%}">Signup</a>
           </li>
           <li class="nav-item auth-btn">
-            <a class="nav-link text-center" href="/login">Login</a>
+            <a class="nav-link text-center" href="{% url "login"%}">Login</a>
           </li>
+        {% endif %}
+        <hr class="w-75 mx-auto">
         </ul>
       </div>
   </nav>
 
+  {% if messages %}
+  {% for message in messages %}
+  <div {% if message.tags %} class="alert-{{ message.tags }} alert alert-dismissible fade show my-0 sticky-top" role="alert" {% endif %}>
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {% endfor %}
+{% endif %}
 
   {% block body %}{% endblock body %}
 
   <!-- Footer -->
-  <footer class="text-center py-4 footer">
-    <div class="container">
-      <p>&copy; 2024 ResumeMaker. All rights reserved.</p>
+  <footer class="text-center py-3 footer">
+    <div class="container ">
+      <p class='text-center my-1'>&copy; 2024 profileSpace. All rights reserved.</p>
     </div>
   </footer>
 

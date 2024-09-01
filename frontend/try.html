@@ -3,246 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+    <title>Enhanced Portfolio Maker Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* General Styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-/* Content Area */
-.content-wrapper {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-}
-
-.content {
-    margin-bottom: 60px;
-}
-
-.content h1, .content h2 {
-    font-weight: bold;
-    color: #333;
-}
-
-.content h1 {
-    font-size: 42px;
-}
-
-.content h2 {
-    font-size: 32px;
-}
-
-.content .lead {
-    font-size: 20px;
-    color: #555;
-}
-
-/* About Section */
-#about img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#about p {
-    font-size: 18px;
-    color: #555;
-}
-
-/* Skills Section */
-#skills ul {
-    padding-left: 20px;
-    font-size: 18px;
-}
-
-#skills li {
-    margin-bottom: 10px;
-}
-
-/* Experience & Education Section */
-.timeline {
-    border-left: 3px solid #007bff;
-    padding-left: 20px;
-}
-
-.timeline-item {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.timeline-item h4 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.timeline-item p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Testimonials Section */
-.testimonial {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.testimonial p {
-    font-size: 18px;
-    color: #666;
-}
-
-.testimonial h5 {
-    font-size: 20px;
-    margin-top: 10px;
-    color: #007bff;
-}
-
-/* Contact Section */
-#contact ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#contact li {
-    margin-bottom: 10px;
-}
-    </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Main Content -->
-            <div class="col-lg-9 col-md-8 content-wrapper">
-                <!-- Welcome Section -->
-                <section id="welcome" class="content">
-                    <h1 class="mb-4 fade-in">Welcome to My Portfolio</h1>
-                    <p class="lead mb-5 slide-in-left">I'm a passionate developer focused on creating impactful projects. Explore my work and learn more about me below.</p>
-                </section>
-
-                <!-- About Section -->
-                <section id="about" class="content">
-                    <h2 class="mb-4 fade-in">About Me</h2>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="path/to/your-photo.jpg" alt="Your Photo" class="img-fluid rounded-circle mb-4 fade-in">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="text-muted slide-in-left">Hello! I'm [Your Name], a developer with expertise in [Your Expertise]. I enjoy building applications that solve real-world problems.</p>
-                        </div>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Create Your Portfolio</h2>
+        <form>
+            <!-- Personal Information -->
+            <div class="mb-4">
+                <h4>Personal Information</h4>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="John" required>
                     </div>
-                </section>
-
-                <!-- Skills Section -->
-                <section id="skills" class="content">
-                    <h2 class="mb-4 fade-in">Skills</h2>
-                    <div class="row">
-                        <div class="col-md-6 slide-in-left">
-                            <ul class="list-unstyled">
-                                <li><strong>Programming Languages:</strong> Python, JavaScript, C++</li>
-                                <li><strong>Frameworks:</strong> Django, React, Bootstrap</li>
-                                <li><strong>Databases:</strong> MySQL, PostgreSQL</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 slide-in-right">
-                            <ul class="list-unstyled">
-                                <li><strong>Tools:</strong> Git, Docker, Jenkins</li>
-                                <li><strong>Cloud Platforms:</strong> AWS, Azure</li>
-                                <li><strong>Others:</strong> Agile Methodologies, UI/UX Design</li>
-                            </ul>
-                        </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
                     </div>
-                </section>
-
-                <!-- Experience Section -->
-                <section id="experience" class="content">
-                    <h2 class="mb-4 fade-in">Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-item slide-in-left">
-                            <h4>Job Title 1 - Company</h4>
-                            <p class="text-muted">Jan 2020 - Present</p>
-                            <p>Worked on [Description of your role, key achievements, and responsibilities].</p>
-                        </div>
-                        <div class="timeline-item slide-in-right">
-                            <h4>Job Title 2 - Company</h4>
-                            <p class="text-muted">Jan 2018 - Dec 2019</p>
-                            <p>Worked on [Description of your role, key achievements, and responsibilities].</p>
-                        </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="john.doe@example.com" required>
                     </div>
-                </section>
-
-                <!-- Education Section -->
-                <section id="education" class="content">
-                    <h2 class="mb-4 fade-in">Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-item slide-in-left">
-                            <h4>Degree - University</h4>
-                            <p class="text-muted">Graduated: 2017</p>
-                            <p>Description of your course, focus areas, and achievements.</p>
-                        </div>
-                        <div class="timeline-item slide-in-right">
-                            <h4>Certification - Institution</h4>
-                            <p class="text-muted">Completed: 2019</p>
-                            <p>Description of the certification and skills gained.</p>
-                        </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="+1234567890" required>
                     </div>
-                </section>
-
-                <!-- Testimonials Section -->
-                <section id="testimonials" class="content">
-                    <h2 class="mb-4 fade-in">Testimonials</h2>
-                    <div class="row">
-                        <div class="col-md-6 slide-in-left">
-                            <div class="testimonial p-4">
-                                <p class="text-muted">"[Your Name] is an outstanding developer who brings innovative solutions to every project."</p>
-                                <h5>- Client Name, Company</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-6 slide-in-right">
-                            <div class="testimonial p-4">
-                                <p class="text-muted">"Working with [Your Name] was a pleasure. Their expertise in [Skill] is unmatched."</p>
-                                <h5>- Colleague Name, Company</h5>
-                            </div>
-                        </div>
+                    <div class="col-12">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                     </div>
-                </section>
-
-                <!-- Contact Section -->
-                <section id="contact" class="content">
-                    <h2 class="mb-4 fade-in">Contact Me</h2>
-                    <p>If you'd like to get in touch, feel free to reach out to me through any of the methods below.</p>
-                    <ul class="list-unstyled slide-in-left">
-                        <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                        <li><strong>Phone:</strong> +123-456-7890</li>
-                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-profile" target="_blank">Your LinkedIn Profile</a></li>
-                    </ul>
-                </section>
+                    <div class="col-12">
+                        <label for="linkedin" class="form-label">LinkedIn Profile</label>
+                        <input type="url" class="form-control" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                    <div class="col-12">
+                        <label for="website" class="form-label">Personal Website</label>
+                        <input type="url" class="form-control" id="website" placeholder="https://yourwebsite.com">
+                    </div>
+                </div>
             </div>
 
-            <!-- Navigation Bar on the Right -->
-            <div class="col-lg-3 col-md-4 nav-wrapper">
-                <nav class="nav flex-column text-end sticky-top p-4">
-                    <a class="nav-link active" aria-current="page" href="#welcome">Home</a>
-                    <a class="nav-link" href="#about">About</a>
-                    <a class="nav-link" href="#skills">Skills</a>
-                    <a class="nav-link" href="#experience">Experience</a>
-                    <a class="nav-link" href="#education">Education</a>
-                    <a class="nav-link" href="#testimonials">Testimonials</a>
-                    <a class="nav-link" href="#contact">Contact</a>
-                </nav>
+            <!-- Objective -->
+            <div class="mb-4">
+                <h4>Objective</h4>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="objective" class="form-label">Career Objective</label>
+                        <textarea class="form-control" id="objective" rows="3" placeholder="Write a brief statement about your career goals." required></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <!-- Education -->
+            <div class="mb-4">
+                <h4>Education</h4>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="school" class="form-label">School/University</label>
+                        <input type="text" class="form-control" id="school" placeholder="ABC University" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="degree" class="form-label">Degree</label>
+                        <input type="text" class="form-control" id="degree" placeholder="B.Sc. in Computer Science" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fieldOfStudy" class="form-label">Field of Study</label>
+                        <input type="text" class="form-control" id="fieldOfStudy" placeholder="Computer Science" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="graduationYear" class="form-label">Graduation Year</label>
+                        <input type="number" class="form-control" id="graduationYear" placeholder="2023" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mb-4">
+                <h4>Certifications</h4>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="certifications" class="form-label">Certifications</label>
+                        <textarea class="form-control" id="certifications" rows="3" placeholder="List any relevant certifications (e.g., Certified Java Developer, AWS Solutions Architect)."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="mb-4">
+                <h4>Work Experience</h4>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="company" placeholder="XYZ Corp" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="jobTitle" class="form-label">Job Title</label>
+                        <input type="text" class="form-control" id="jobTitle" placeholder="Software Engineer" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="startDate" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" class="form-control" id="endDate">
+                    </div>
+                    <div class="col-12">
+                        <label for="jobDescription" class="form-label">Job Description</label>
+                        <textarea class="form-control" id="jobDescription" rows="3" placeholder="Describe your responsibilities and achievements" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="mb-4">
+                <h4>Skills</h4>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="skill1" class="form-label">Skill 1</label>
+                        <input type="text" class="form-control" id="skill1" placeholder="JavaScript" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="skill2" class="form-label">Skill 2</label>
+                        <input type="text" class="form-control" id="skill2" placeholder="HTML & CSS">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="skill3" class="form-label">Skill 3</label>
+                        <input type="text" class="form-control" id="skill3" placeholder="React">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="skill4" class="form-label">Skill 4</label>
+                        <input type="text" class="form-control" id="skill4" placeholder="Node.js">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="mb-4">
+                <h4>Languages</h4>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="language1" class="form-label">Language 1</label>
+                        <input type="text" class="form-control" id="language1" placeholder="English" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="language2" class="form-label">Language 2</label>
+                        <input type="text" class="form-control" id="language2" placeholder="Spanish">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobbies -->
+            <div class="mb-4">
+                <h4>Hobbies & Interests</h4>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="hobbies" class="form-label">Hobbies & Interests</label>
+                        <textarea class="form-control" id="hobbies" rows="3" placeholder="List any hobbies or interests that might be relevant to your career or personal development."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- References -->
+            <div class="mb-4">
+                <h4>References</h4>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="references" class="form-label">References</label>
+                        <textarea class="form-control" id="references" rows="3" placeholder="Provide contact details for professional references."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Generate Portfolio</button>
+            </div>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

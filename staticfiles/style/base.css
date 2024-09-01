@@ -11,7 +11,10 @@ body {
     rgb(233, 233, 233)
   );
 }
-
+.navbar-toggler,
+.navbar-toggler:hover {
+  border: none;
+}
 .theme-color {
   background: linear-gradient(
     90deg,
@@ -21,16 +24,24 @@ body {
   );
 }
 
+.nav-link:hover {
+  background-color: #fafafa34;
+  border-radius: 12px;
+}
 
-.auth-btn a{
+.auth-btn a {
   background-color: #0084ff;
   color: white;
   border-radius: 6px;
   margin: 2px;
-
 }
-.auth-btn a:hover{
+.auth-btn a:hover {
   background-color: #0279e9;
+  color: white !important;
+  border-radius: 6px;
+}
+.footer {
+  background-color: #000000e0;
   color: white;
-
+  padding: 20px;
 }
